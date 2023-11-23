@@ -1,12 +1,22 @@
-
-from xml.etree import ElementTree as ET
+"""
+This class is responsible for parsing the XML file and returning a list of questions.
+"""
+from xml.etree import ElementTree as e_tree
 from Question import Question
 from ChoiceImageQuestion import ChoiceImageQuestion
 from ChoiceQuestion import ChoiceQuestion
 
+
+# TODO: Pycharm is telling me that the <parse()> can be static. Should it be?
 class XMLParser:
+
+    """
+    Parses the XML file and returns a list of questions.
+    :param xml_path: The path to the XML file.
+    :return: A list of questions.
+    """
     def parse(self, xml_path):
-        tree = ET.parse(xml_path)
+        tree = e_tree.parse(xml_path)
         root = tree.getroot()
         result = []
         questions = []

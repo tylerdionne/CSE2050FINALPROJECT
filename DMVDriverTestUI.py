@@ -16,6 +16,7 @@ class DMVDriverTestUI(QWidget):
         self.correct_answers = 0
         self.grid_layout = QGridLayout(self)
         self.setup_ui()
+
     def setup_ui(self):
         self.setStyleSheet("background-color: white; color: black;")
         self.setWindowTitle("CSE 2050 DMV Driver's Test")
@@ -66,6 +67,6 @@ class DMVDriverTestUI(QWidget):
             for i in reversed(range(layout.count())):
                 widget_to_remove = layout.itemAt(i).widget()
                 layout.removeWidget(widget_to_remove)
+
+                # TODO: Why do we need to set the parent to None?
                 widget_to_remove.setParent(None)
-
-

@@ -66,7 +66,7 @@
 	</question>
 
 	<question>
-		<questionText>The shape of this sign provides advance warning of the</questionText>
+		<questionText>The shape of this sign provides an early warning of the</questionText>
 		<questionImage  path="images/no_passing.jpeg" />
 		<answer>No-Zone ahead.</answer>
 		<answer correct="true">no-passing zone ahead.</answer>
@@ -92,12 +92,12 @@
 	<question>
 		<questionText>What does this sign mean?</questionText>
 		<questionImage  path="images/bicycle.jpeg" />
-		<answer correct="true">A bikeway crosses the roadway ahead.</answer>
+		<answer correct="true">A bike-way crosses the roadway ahead.</answer>
 		<answer>Bicyclists should not use this lane.</answer>
 		<answer>A no-passing zone for bicyclists is ahead.</answer>
 		<answer>Bicyclists may use the lane only where the sign is posted.</answer>
 		<answerComments>
-			This sign represents a bicycle crossing. This sign warns you in advance that a bikeway crosses the roadway ahead.
+			This sign represents a bicycle crossing. This sign warns you in advance that a bike-way crosses the roadway ahead.
 		</answerComments>
 	</question>
 
@@ -229,7 +229,11 @@
 		<answer>the road ahead is closed.</answer>
 		<answer>the road ahead is under repair.</answer>
 		<answerComments>
-			This sign gives advance warning of a railroad crossing ahead. (At the approach to some crossings, there may also be pavement markings consisting of an X and the letters "RR.") Slow down and look and listen for warning signals and approaching trains. Prepare to stop if necessary. Don't try to cross if a train is approaching.
+			This sign gives an early warning of a railroad crossing ahead.
+			(At the approach to some crossings, there may also be pavement markings consisting of an X and the letters "RR.")
+			Slow down and look and listen for warning signals and approaching trains.
+			Prepare to stop if necessary.
+			Don't try to cross if a train is approaching.
 		</answerComments>
 	</question>
 
@@ -241,7 +245,13 @@
 		<answer>Farm ahead</answer>
 		<answer>Zoo ahead</answer>
 		<answerComments>
-			This is an animal crossing sign. The animal pictured on the sign (a deer in this case) is common in this area. Watch for these animals crossing the road, particularly at dawn and dusk. Deer, elk, and similar wildlife travel in herds. If you see one, be alert for others. A collision with a large animal may kill the animal, damage your vehicle, and possibly even injure someone in your vehicle.
+			This is an animal crossing sign.
+			The animal pictured on the sign (a deer in this case) is common in this area.
+			Watch for these animals crossing the road, particularly when close to dawn and dusk.
+			Deer, elk, and similar wildlife travel in herds.
+			If you see one, be alert for others.
+			A collision with a large animal may kill the animal,
+			damage your vehicle, and possibly even injure someone in your vehicle.
 		</answerComments>
 	</question>
 
@@ -264,7 +274,9 @@
 		<answer>200 feet</answer>
 		<answer>450 feet</answer>
 		<answerComments>
-			Under Florida law, you must dim your headlights to low beam whenever you are within 500 feet of an oncoming vehicle or within 300 feet of a vehicle you are following.
+			Under Florida law,
+			you must dim your head-lights to low beam
+			whenever you are within 500 feet of an oncoming vehicle or within 300 feet of a vehicle you are following.
 		</answerComments>
 	</question>
 
@@ -307,7 +319,12 @@
 		<answer>People who throw trash on public streets and highways can be fined at least $100.</answer>
 		<answer>If you collide with an unoccupied vehicle, you must immediately notify law enforcement.</answer>
 		<answerComments>
-			In Florida, littering is a crime punishable by a fine of at least $100. The court may also require you to pick up litter along roadways. When you hit a vehicle, you must immediately report the crash to the proper law enforcement agency. When you back up, place your right arm on the back of the seat and turn around for a clear rear view. Driving too slowly is also against the law. Always try to keep up with traffic as long as you do not exceed the speed limit.
+			In Florida, littering is a crime punishable by a fine of at least $100.
+			The court may also require you to pick up litter along roadways.
+			When you hit a vehicle, you must immediately report the crash to the proper law enforcement agency.
+			When you back up, place your right arm on the back of the seat and turn around for a clear rearview.
+			Driving too slowly is also against the law.
+			Always try to keep up with traffic as long as you do not exceed the speed limit.
 		</answerComments>
 	</question>
 
@@ -368,13 +385,18 @@
 	</question>
 
 	<question>
-		<questionText>You're driving a vehicle without antilock brakes (ABS) on a slippery wet road. What is the best way to stop your vehicle?</questionText>
+		<questionText>You're driving a vehicle without anti-lock brakes (ABS) on a slippery, wet road. What is the best way to stop your vehicle?</questionText>
 		<answer>Apply the brake pedal firmly</answer>
 		<answer>Shift into neutral</answer>
 		<answer correct="true">Pump the brakes</answer>
 		<answer>Take your foot off the accelerator</answer>
 		<answerComments>
-			Drivers with conventional brakes must pump the brakes in order to stop in an emergency situation where traction is lost and the vehicle slides. Note: Do NOT do this if your vehicle has ABS. ABS will do its own brake pumping to keep the wheels from locking, so you can apply the brake pedal firmly until the vehicle stops. If you pump the brakes, you'll just deactivate the ABS.
+			Drivers with conventional brakes must pump the brakes
+			to stop in an emergency situation where traction is lost and the vehicle slides.
+			Note: Do NOT do this if your vehicle has ABS.
+			ABS will do its own brake pumping to keep the wheels from locking,
+			so you can apply the brake pedal firmly until the vehicle stops.
+			If you pump the brakes, you will deactivate the ABS.
 		</answerComments>
 	</question>
 
@@ -397,7 +419,14 @@
 		<answer>round spots.</answer>
 		<answer correct="true">No-Zones.</answer>
 		<answerComments>
-			Don't hang out in a No-Zone! No-Zones are large areas around trucks, buses, and other large vehicles in which cars may disappear into blind spots or get so close that they restrict the truck driver's ability to stop or maneuver safely. No-Zones exist to the front, rear, and sides of the vehicle. It is impossible to completely avoid a large vehicle's No-Zones. However, do not remain in a No-Zone any longer than necessary to safely pass the vehicle. And never tailgate a truck.
+			Don't loiter in a No-Zone!
+			No-Zones are large areas around trucks, buses,
+			and other large vehicles in which cars may disappear into blind spots
+			or get so close that they restrict the truck driver's ability to stop or maneuver safely.
+			No-Zones exist to the front, rear, and sides of the vehicle.
+			It is impossible to completely avoid a large vehicle's No-Zones.
+			However, do not remain in a No-Zone any longer than necessary to safely pass the vehicle.
+			And never tailgate a truck.
 		</answerComments>
 	</question>
 
@@ -424,13 +453,15 @@
 	</question>
 
 	<question>
-		<questionText>The Florida law exempts all of the following from the seat belt requirements except</questionText>
+		<questionText>The Florida law exempts all the following from the seat belt requirements except</questionText>
 		<answer>an employee delivering newspapers.</answer>
 		<answer correct="true">passenger cars manufactured after 1968.</answer>
 		<answer>farm equipment.</answer>
 		<answer>buses.</answer>
 		<answerComments>
-			Florida's seat belt law applies to passenger cars manufactured since the 1968 model year. The law exempts the following from the seat belt requirements: a person who is certified by a doctor as unable to wear a seat belt, an employee of a newspaper home delivery service who is delivering newspapers, an employee of a waste collection service in the process of collecting waste, buses, farm equipment, school buses purchased new before 31 December 2000, the living quarters of recreational vehicles, and trucks weighing more than 26,000 pounds. [FL Stat § 316.614]
+			Florida's seat belt law applies to passenger cars manufactured after the 1968 model year.
+			The law exempts the following from the seat belt requirements: a person who is certified by a doctor as unable to wear a seat belt, an employee of a newspaper home delivery service who is delivering newspapers, an employee of a waste collection service in the process of collecting waste, buses, farm equipment, school buses purchased new before 31 December 2000, the living quarters of recreational vehicles, and trucks weighing more than 26,000 pounds.
+			[FL Stat § 316.614]
 		</answerComments>
 	</question>
 
@@ -471,7 +502,7 @@
 	<question>
 		<questionText>What does a flashing yellow arrow signal mean?</questionText>
 		<questionImage  path="images/flashing_yellow.jpeg" />
-		<answer correct="true">You may turn in the direction of the arrow but only after you yield to pedestrians and oncoming vehicles.</answer>
+		<answer correct="true">You may turn in the direction of the arrow, but only after you yield to pedestrians and oncoming vehicles.</answer>
 		<answer>You may turn in the direction of the arrow; oncoming traffic is stopped.</answer>
 		<answer>The yellow arrow is about to turn red; you must not turn in the direction of the arrow.</answer>
 		<answer>You must stop immediately.</answer>
