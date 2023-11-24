@@ -1,9 +1,9 @@
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton, QRadioButton
-from ChoiceQuestion import ChoiceQuestion
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QComboBox, QTextBrowser
 from PyQt5.QtWidgets import QGridLayout
 from PyQt5.QtCore import Qt
+from ChoiceQuestion import ChoiceQuestion
 
 
 class DMVDriverTestUI(QWidget):
@@ -37,7 +37,7 @@ class DMVDriverTestUI(QWidget):
 
         choicequestion.display(self.grid_layout)
 
-        question_label = QLabel("Question {} of 40     | Correct: {} / 40".format(self.current_question_index,  self.correct_answers))
+        question_label = QLabel("Question {} of 40     | Correct: {} / 40".format(self.current_question_index + 1,  self.correct_answers))
         self.grid_layout.addWidget(question_label, 8, 0, 1, 1)
 
         next_button = QPushButton("Next Question", self)
@@ -54,6 +54,13 @@ class DMVDriverTestUI(QWidget):
         #print(q.check_answer(response))
 
     def next_question(self):
+
+        current_question = self.questions[self.current_question_index]
+        current_choice_question = self.choicequestions[self.current_question_index]
+        select = current_choice_question.selected_choice
+        if select == current_question.answer:
+            self.correct_answers += 1
+
         if self.current_question_index < 39:
             self.current_question_index = self.current_question_index + 1
             self.clear()
