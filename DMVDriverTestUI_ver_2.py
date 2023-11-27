@@ -17,6 +17,7 @@ class Ui_dmv_test_main_window(QtWidgets.QMainWindow):
         dmv_test_main_window.resize(800, 600)
         self.dmv_central_widget = QtWidgets.QWidget(dmv_test_main_window)
         self.dmv_central_widget.setObjectName("dmv_central_widget")
+
         self.choice_layout = QtWidgets.QGroupBox(self.dmv_central_widget)
         self.choice_layout.setGeometry(QtCore.QRect(20, 310, 581, 131))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
@@ -29,7 +30,7 @@ class Ui_dmv_test_main_window(QtWidgets.QMainWindow):
         self.question_choice_form = QtWidgets.QFormLayout(self.choice_layout)
         self.question_choice_form.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
         self.question_choice_form.setRowWrapPolicy(QtWidgets.QFormLayout.DontWrapRows)
-        self.question_choice_form.setFormAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.question_choice_form.setFormAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.question_choice_form.setObjectName("question_choice_form")
         self.ch_button_two = QtWidgets.QRadioButton(self.choice_layout)
         self.ch_button_two.setObjectName("ch_button_two")
@@ -76,7 +77,7 @@ class Ui_dmv_test_main_window(QtWidgets.QMainWindow):
         self.ch_line_four.setReadOnly(True)
         self.ch_line_four.setObjectName("ch_line_four")
         self.question_choice_form.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.ch_line_four)
-        self.answer_comment = QtWidgets.QTextEdit(self.dmv_central_widget)
+        self.answer_comment = QtWidgets.QLineEdit(self.dmv_central_widget)
         self.answer_comment.setGeometry(QtCore.QRect(20, 450, 701, 51))
         self.answer_comment.setReadOnly(True)
         self.answer_comment.setObjectName("answer_comment")
@@ -159,12 +160,8 @@ class Ui_dmv_test_main_window(QtWidgets.QMainWindow):
         self.ch_line_three.setPlaceholderText(_translate("dmv_test_main_window", "Answer text 3"))
         self.ch_button_four.setText(_translate("dmv_test_main_window", "Answer #4: "))
         self.ch_line_four.setPlaceholderText(_translate("dmv_test_main_window", "Answer text 4"))
-        self.answer_comment.setHtml(_translate("dmv_test_main_window", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.answer_comment.setPlaceholderText(_translate("dmv_test_main_window", "Allows form answer comments to wrap."))
+        self.answer_comment.setPlaceholderText(
+            _translate("dmv_test_main_window", "Allows form answer comments to wrap."))
         self.num_correct.setText(_translate("dmv_test_main_window", "Correct: n/40"))
         self.current_index.setText(_translate("dmv_test_main_window", "Question n/40"))
         self.answer_prompt.setText(_translate("dmv_test_main_window", "Placeholder Prompt"))
@@ -172,8 +169,10 @@ class Ui_dmv_test_main_window(QtWidgets.QMainWindow):
         self.quit_button.setText(_translate("dmv_test_main_window", "Quit the Quiz"))
 
 
+# Driver code.
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     dmv_test_main_window = QtWidgets.QMainWindow()
     ui = Ui_dmv_test_main_window()
