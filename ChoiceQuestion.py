@@ -2,6 +2,7 @@ from Question import Question
 from PyQt5.QtWidgets import QRadioButton
 from PyQt5.QtWidgets import QLabel
 
+
 class ChoiceQuestion(Question):
     selected_choice = None
 

@@ -1,9 +1,8 @@
-
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton, QRadioButton
+from ChoiceQuestion import ChoiceQuestion
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QComboBox, QTextBrowser
 from PyQt5.QtWidgets import QGridLayout
 from PyQt5.QtCore import Qt
-from ChoiceQuestion import ChoiceQuestion
 
 
 class DMVDriverTestUI(QWidget):
@@ -17,12 +16,13 @@ class DMVDriverTestUI(QWidget):
         self.grid_layout = QGridLayout(self)
         self.setup_ui()
 
+    # TODO: The layout does not retain it's rectangular shape, leading to the window stretching beyond the screen.
     def setup_ui(self):
         self.setStyleSheet("background-color: white; color: black;")
         self.setWindowTitle("CSE 2050 DMV Driver's Test")
 
-        #grid_layout = QGridLayout(self)
-        #self.grid_layout = QGridLayout(self)
+        # grid_layout = QGridLayout(self)
+        # self.grid_layout = QGridLayout(self)
 
         question = self.questions[self.current_question_index]
         questiontext = question.question_text
@@ -37,30 +37,24 @@ class DMVDriverTestUI(QWidget):
 
         choicequestion.display(self.grid_layout)
 
-        question_label = QLabel("Question {} of 40     | Correct: {} / 40".format(self.current_question_index + 1,  self.correct_answers))
+        question_label = QLabel("Question {} of 40     | Correct: {} / 40".format(self.current_question_index,
+                                                                                  self.correct_answers))
         self.grid_layout.addWidget(question_label, 8, 0, 1, 1)
 
         next_button = QPushButton("Next Question", self)
         next_button.clicked.connect(self.next_question)
         self.grid_layout.addWidget(next_button, 8, 1, 1, 1)
-        
+
         quit_button = QPushButton("Quit Quiz", self)
         quit_button.clicked.connect(QApplication.quit)
         self.grid_layout.addWidget(quit_button, 8, 2, 1, 1)
 
-    def present_question(q):
-        q.display(self.grid.layout)
-        #response = input("Your answer: ")
-        #print(q.check_answer(response))
+    def present_question(self):
+        self.display(self.grid.layout)
+        # response = input("Your answer: ")
+        # print(q.check_answer(response))
 
     def next_question(self):
-
-        current_question = self.questions[self.current_question_index]
-        current_choice_question = self.choicequestions[self.current_question_index]
-        select = current_choice_question.selected_choice
-        if select == current_question.answer:
-            self.correct_answers += 1
-
         if self.current_question_index < 39:
             self.current_question_index = self.current_question_index + 1
             self.clear()
