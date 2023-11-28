@@ -37,7 +37,7 @@ class DMVDriverTestUI(QWidget):
 
         choicequestion.display(self.grid_layout)
 
-        question_label = QLabel("Question {} of 40     | Correct: {} / 40".format(self.current_question_index,
+        question_label = QLabel("Question {} of 40     | Correct: {} / 40".format(self.current_question_index + 1,
                                                                                   self.correct_answers))
         self.grid_layout.addWidget(question_label, 8, 0, 1, 1)
 
@@ -55,6 +55,12 @@ class DMVDriverTestUI(QWidget):
         # print(q.check_answer(response))
 
     def next_question(self):
+        current_question = self.questions[self.current_question_index]
+        current_choice_question = self.choicequestions[self.current_question_index]
+        select = current_choice_question.selected_choice
+        if select == current_question.answer:
+            self.correct_answers += 1
+
         if self.current_question_index < 39:
             self.current_question_index = self.current_question_index + 1
             self.clear()
