@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton, QRadioButton
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton, QRadioButton, QHBoxLayout
 from ChoiceQuestion import ChoiceQuestion
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QComboBox, QTextBrowser
 from PyQt5.QtWidgets import QGridLayout
@@ -20,6 +20,7 @@ class DMVDriverTestUI(QWidget):
     def setup_ui(self):
         self.setStyleSheet("background-color: white; color: black;")
         self.setWindowTitle("CSE 2050 DMV Driver's Test")
+        self.setFixedSize(1000, 600)
 
         # grid_layout = QGridLayout(self)
         # self.grid_layout = QGridLayout(self)
@@ -48,6 +49,34 @@ class DMVDriverTestUI(QWidget):
         quit_button = QPushButton("Quit Quiz", self)
         quit_button.clicked.connect(QApplication.quit)
         self.grid_layout.addWidget(quit_button, 8, 2, 1, 1)
+
+        bottom_row_layout = QHBoxLayout()
+
+        # Create and add the question index and correct answers label to the left
+        question_label = QLabel(
+            "Question {} of 40 | Correct: {} / 40".format(self.current_question_index + 1, self.correct_answers))
+        bottom_row_layout.addWidget(question_label)
+
+        # Add a stretch item to push the buttons to the right
+        bottom_row_layout.addStretch()
+
+        # Create and add the "Next Question" button
+        next_button = QPushButton("Next Question", self)
+        next_button.clicked.connect(self.next_question)
+        bottom_row_layout.addWidget(next_button)
+
+        # Create and add the "Quit Quiz" button
+        quit_button = QPushButton("Quit Quiz", self)
+        quit_button.clicked.connect(QApplication.quit)
+        bottom_row_layout.addWidget(quit_button)
+
+        # Add the bottom row layout to the grid layout at the last row
+        self.grid_layout.addLayout(bottom_row_layout, 8, 0, 1, 3)  # Spanning across all columns
+
+        # Set the row stretch for all other rows except the last to ensure they don't expand unnecessarily
+        for i in range(self.grid_layout.rowCount() - 1):
+            self.grid_layout.setRowStretch(i, 0)
+        self.grid_layout.setRowStretch(self.grid_layout.rowCount() - 1, 0)
 
     def present_question(self):
         self.display(self.grid.layout)

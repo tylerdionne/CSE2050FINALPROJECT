@@ -9,174 +9,156 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QApplication, QLabel
+
+from XMLParser import XMLParser
 
 
-class Ui_dmv_test_main_window(QtWidgets.QMainWindow):
-    def setupUi(self, dmv_test_main_window):
-        dmv_test_main_window.setObjectName("dmv_test_main_window")
-        dmv_test_main_window.resize(800, 600)
-        self.dmv_central_widget = QtWidgets.QWidget(dmv_test_main_window)
-        self.dmv_central_widget.setObjectName("dmv_central_widget")
-        self.choice_layout = QtWidgets.QGroupBox(self.dmv_central_widget)
-        self.choice_layout.setGeometry(QtCore.QRect(20, 310, 581, 131))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.choice_layout.sizePolicy().hasHeightForWidth())
-        self.choice_layout.setSizePolicy(sizePolicy)
-        self.choice_layout.setAlignment(QtCore.Qt.AlignCenter)
-        self.choice_layout.setObjectName("choice_layout")
-        self.question_choice_form = QtWidgets.QFormLayout(self.choice_layout)
-        self.question_choice_form.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
-        self.question_choice_form.setRowWrapPolicy(QtWidgets.QFormLayout.DontWrapRows)
-        self.question_choice_form.setFormAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
-        self.question_choice_form.setObjectName("question_choice_form")
-        self.ch_button_two = QtWidgets.QRadioButton(self.choice_layout)
-        self.ch_button_two.setObjectName("ch_button_two")
-        self.question_choice_form.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.ch_button_two)
-        self.ch_line_one = QtWidgets.QLineEdit(self.choice_layout)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.ch_line_one.sizePolicy().hasHeightForWidth())
-        self.ch_line_one.setSizePolicy(sizePolicy)
-        self.ch_line_one.setReadOnly(True)
-        self.ch_line_one.setObjectName("ch_line_one")
-        self.question_choice_form.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.ch_line_one)
-        self.ch_button_one = QtWidgets.QRadioButton(self.choice_layout)
-        self.ch_button_one.setIconSize(QtCore.QSize(20, 20))
-        self.ch_button_one.setObjectName("ch_button_one")
-        self.question_choice_form.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.ch_button_one)
-        self.ch_line_two = QtWidgets.QLineEdit(self.choice_layout)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.ch_line_two.sizePolicy().hasHeightForWidth())
-        self.ch_line_two.setSizePolicy(sizePolicy)
-        self.ch_line_two.setReadOnly(True)
-        self.ch_line_two.setObjectName("ch_line_two")
-        self.question_choice_form.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.ch_line_two)
-        self.ch_button_three = QtWidgets.QRadioButton(self.choice_layout)
-        self.ch_button_three.setObjectName("ch_button_three")
-        self.question_choice_form.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.ch_button_three)
-        self.ch_line_three = QtWidgets.QLineEdit(self.choice_layout)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.ch_line_three.sizePolicy().hasHeightForWidth())
-        self.ch_line_three.setSizePolicy(sizePolicy)
-        self.ch_line_three.setReadOnly(True)
-        self.ch_line_three.setObjectName("ch_line_three")
-        self.question_choice_form.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.ch_line_three)
-        self.ch_button_four = QtWidgets.QRadioButton(self.choice_layout)
-        self.ch_button_four.setObjectName("ch_button_four")
-        self.question_choice_form.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.ch_button_four)
-        self.ch_line_four = QtWidgets.QLineEdit(self.choice_layout)
-        self.ch_line_four.setText("")
-        self.ch_line_four.setReadOnly(True)
-        self.ch_line_four.setObjectName("ch_line_four")
-        self.question_choice_form.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.ch_line_four)
-        self.answer_comment = QtWidgets.QTextEdit(self.dmv_central_widget)
-        self.answer_comment.setGeometry(QtCore.QRect(20, 450, 701, 51))
-        self.answer_comment.setReadOnly(True)
-        self.answer_comment.setObjectName("answer_comment")
-        self.verticalLayoutWidget = QtWidgets.QWidget(self.dmv_central_widget)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(19, 19, 761, 231))
-        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-        self.image_layout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.image_layout.setContentsMargins(0, 0, 0, 0)
-        self.image_layout.setObjectName("image_layout")
-        self.ch_image_frame = QtWidgets.QFrame(self.verticalLayoutWidget)
-        self.ch_image_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.ch_image_frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.ch_image_frame.setObjectName("ch_image_frame")
-        self.image_layout.addWidget(self.ch_image_frame)
-        self.gridLayoutWidget = QtWidgets.QWidget(self.dmv_central_widget)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(20, 510, 311, 31))
-        self.gridLayoutWidget.setObjectName("gridLayoutWidget")
-        self.index_layout = QtWidgets.QGridLayout(self.gridLayoutWidget)
-        self.index_layout.setContentsMargins(0, 0, 0, 0)
-        self.index_layout.setObjectName("index_layout")
-        self.num_correct = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.num_correct.setAlignment(QtCore.Qt.AlignCenter)
-        self.num_correct.setObjectName("num_correct")
-        self.index_layout.addWidget(self.num_correct, 0, 2, 1, 1)
-        self.current_index = QtWidgets.QLabel(self.gridLayoutWidget)
-        self.current_index.setAlignment(QtCore.Qt.AlignCenter)
-        self.current_index.setObjectName("current_index")
-        self.index_layout.addWidget(self.current_index, 0, 0, 1, 1)
-        self.seperator = QtWidgets.QFrame(self.gridLayoutWidget)
-        self.seperator.setFrameShadow(QtWidgets.QFrame.Plain)
-        self.seperator.setFrameShape(QtWidgets.QFrame.VLine)
-        self.seperator.setObjectName("seperator")
-        self.index_layout.addWidget(self.seperator, 0, 1, 1, 1)
-        self.answer_prompt = QtWidgets.QLabel(self.dmv_central_widget)
-        self.answer_prompt.setGeometry(QtCore.QRect(20, 270, 761, 24))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.answer_prompt.sizePolicy().hasHeightForWidth())
-        self.answer_prompt.setSizePolicy(sizePolicy)
+class Ui_DmvTestMainWindow(object):
+    def __init__(self, questions, choiceimagequestions, choicequestions):
+        super().__init__()
+        self.indexLayoutWidget = None
+        self.imageFrame = None
+        self.imageLayout = None
+        self.imageLayoutWidget = None
+        self.choiceForm = None
+        self.choiceLayout = None
+        self.centralWidget = None
+        self.statusbar = None
+        self.menubar = None
+        self.questions = questions
+        self.choiceimagequestions = choiceimagequestions
+        self.choicequestions = choicequestions
+        self.current_question_index = 0
+        self.correct_answers = 0
+        self.questionLabel = None
+
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(800, 600)
+
+        question = self.questions[self.current_question_index]
+        questiontext = question.question_text
+        choiceimagequestion = self.choiceimagequestions[self.current_question_index]
+        choicequestion = self.choicequestions[self.current_question_index]
+
+        print(questiontext)
+
+        self.centralWidget = QtWidgets.QWidget(MainWindow)
+        self.centralWidget.setObjectName("centralWidget")
+
+        self.QuestionLabel(questiontext)
+        self.setupChoiceLayout()
+        self.setupImageLayout()
+        self.setupIndexLayout(self.centralWidget)
+        self.setupNavigationLayout(self.centralWidget)
+
+        MainWindow.setCentralWidget(self.centralWidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+
+        MainWindow.setMenuBar(self.menubar)
+        MainWindow.setStatusBar(self.statusbar)
+
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def QuestionLabel(self, questionText):
+
         font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.answer_prompt.setFont(font)
-        self.answer_prompt.setWordWrap(True)
-        self.answer_prompt.setObjectName("answer_prompt")
-        self.horizontalLayoutWidget = QtWidgets.QWidget(self.dmv_central_widget)
-        self.horizontalLayoutWidget.setGeometry(QtCore.QRect(420, 510, 351, 31))
-        self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
-        self.navigation_layout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
-        self.navigation_layout.setContentsMargins(0, 0, 0, 0)
-        self.navigation_layout.setObjectName("navigation_layout")
-        self.next_button = QtWidgets.QPushButton(self.horizontalLayoutWidget)
-        self.next_button.setObjectName("next_button")
-        self.navigation_layout.addWidget(self.next_button)
-        self.quit_button = QtWidgets.QPushButton(self.horizontalLayoutWidget)
-        self.quit_button.setObjectName("quit_button")
-        self.navigation_layout.addWidget(self.quit_button)
-        dmv_test_main_window.setCentralWidget(self.dmv_central_widget)
-        self.menubar = QtWidgets.QMenuBar(dmv_test_main_window)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
-        self.menubar.setObjectName("menubar")
-        dmv_test_main_window.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(dmv_test_main_window)
-        self.statusbar.setObjectName("statusbar")
-        dmv_test_main_window.setStatusBar(self.statusbar)
+        font.setPointSize(12)
 
-        self.retranslateUi(dmv_test_main_window)
-        QtCore.QMetaObject.connectSlotsByName(dmv_test_main_window)
+        self.questionLabel = QtWidgets.QLabel(self.centralWidget)
+        self.questionLabel.setGeometry(QtCore.QRect(20, 280, 750, 30))  # Adjust geometry as needed
+        self.questionLabel.setAlignment(QtCore.Qt.AlignLeft)
+        self.questionLabel.setObjectName("questionLabel")
+        self.questionLabel.setText(questionText)
+        self.questionLabel.setFont(font)
 
-    def retranslateUi(self, dmv_test_main_window):
-        _translate = QtCore.QCoreApplication.translate
-        dmv_test_main_window.setWindowTitle(_translate("dmv_test_main_window", "MainWindow"))
-        self.ch_button_two.setText(_translate("dmv_test_main_window", "Answer #1"))
-        self.ch_line_one.setPlaceholderText(_translate("dmv_test_main_window", "Answer text 1"))
-        self.ch_button_one.setText(_translate("dmv_test_main_window", "Answer #2:"))
-        self.ch_line_two.setPlaceholderText(_translate("dmv_test_main_window", "Answer text 2"))
-        self.ch_button_three.setText(_translate("dmv_test_main_window", "Answer #3: "))
-        self.ch_line_three.setPlaceholderText(_translate("dmv_test_main_window", "Answer text 3"))
-        self.ch_button_four.setText(_translate("dmv_test_main_window", "Answer #4: "))
-        self.ch_line_four.setPlaceholderText(_translate("dmv_test_main_window", "Answer text 4"))
-        self.answer_comment.setHtml(_translate("dmv_test_main_window", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.answer_comment.setPlaceholderText(_translate("dmv_test_main_window", "Allows form answer comments to wrap."))
-        self.num_correct.setText(_translate("dmv_test_main_window", "Correct: n/40"))
-        self.current_index.setText(_translate("dmv_test_main_window", "Question n/40"))
-        self.answer_prompt.setText(_translate("dmv_test_main_window", "Placeholder Prompt"))
-        self.next_button.setText(_translate("dmv_test_main_window", "Next Question"))
-        self.quit_button.setText(_translate("dmv_test_main_window", "Quit the Quiz"))
+    def setupChoiceLayout(self):
+        self.choiceLayout = QtWidgets.QGroupBox(self.centralWidget)
+        self.choiceLayout.setGeometry(QtCore.QRect(20, 310, 750, 150))
+        self.choiceLayout.setAlignment(QtCore.Qt.AlignCenter)
+        self.choiceLayout.setObjectName("choiceLayout")
+        self.choiceForm = QtWidgets.QFormLayout(self.choiceLayout)
+
+        for i in range(1, 5):
+            self.addChoice(f"ch_button_{i}")
+
+    def addChoice(self, radioButtonName):
+        radioButton = QtWidgets.QRadioButton(self.choiceLayout)
+        radioButton.setObjectName(radioButtonName)
+        setattr(self, radioButtonName, radioButton)  # Store the radioButton as an attribute
+
+        self.choiceForm.addRow(radioButton)
+
+    def setupImageLayout(self):
+        self.imageLayoutWidget = QtWidgets.QWidget(self.centralWidget)
+        self.imageLayoutWidget.setGeometry(QtCore.QRect(19, 19, 761, 231))
+        self.imageLayout = QtWidgets.QVBoxLayout(self.imageLayoutWidget)
+        self.imageFrame = QtWidgets.QFrame(self.imageLayoutWidget)
+        self.imageLayout.addWidget(self.imageFrame)
+
+    def setupIndexLayout(self, parent):
+        self.indexLayoutWidget = QtWidgets.QWidget(parent)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+
+        self.numCorrect = QtWidgets.QLabel(self.indexLayoutWidget)
+        self.numCorrect.setGeometry(QtCore.QRect(200, 515, 100, 50))
+        self.numCorrect.setFont(font)
+        self.numCorrect.setText("Correct: {}/40".format(self.correct_answers))
+
+        self.currentIndex = QtWidgets.QLabel(self.indexLayoutWidget)
+        self.currentIndex.setGeometry(QtCore.QRect(50, 515, 150, 50))
+        self.currentIndex.setFont(font)
+        self.currentIndex.setText("Question {} of 40".format(self.current_question_index + 1))
+
+
+        self.separator = QtWidgets.QFrame(self.indexLayoutWidget)
+        self.separator.setFrameShape(QtWidgets.QFrame.VLine)
+        self.separator.setGeometry(QtCore.QRect(60, 530, 250, 20))
+
+    def setupNavigationLayout(self, parent):
+
+        font = QtGui.QFont()
+        font.setPointSize(12)
+
+        self.nextButton = QtWidgets.QPushButton(parent)
+        self.nextButton.setGeometry(QtCore.QRect(575, 525, 200, 30))
+        self.nextButton.setFont(font)
+        self.nextButton.setText("Next Question")
+        self.nextButton.clicked.connect(self.next)
+
+        self.quitButton = QtWidgets.QPushButton(parent)
+        self.quitButton.setGeometry(QtCore.QRect(375, 525, 200, 30))
+        self.quitButton.setFont(font)
+        self.quitButton.setText("Quit Quiz")
+        self.quitButton.clicked.connect(QApplication.quit)
+
+    def next(self):
+        if self.current_question_index < 39:
+            self.current_question_index = self.current_question_index + 1
+            self.setupUi(MainWindow)
+        else:
+            print("Quiz Completed!")
 
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
-    dmv_test_main_window = QtWidgets.QMainWindow()
-    ui = Ui_dmv_test_main_window()
-    ui.setupUi(dmv_test_main_window)
-    dmv_test_main_window.show()
+    MainWindow = QtWidgets.QMainWindow()
+
+    xml_parser = XMLParser()    # Create the XML parser.
+
+    result = xml_parser.parse("florida_drivers_test.xml")   # Parse the XML file.
+    questions = result[0]   # Get the questions.
+    choiceimagequestions = result[1]
+    choicequestions = result[2]
+
+    ui = Ui_DmvTestMainWindow(questions,
+                              choiceimagequestions,
+                              choicequestions)
+    ui.setupUi(MainWindow)
+    MainWindow.show()
     sys.exit(app.exec_())

@@ -16,7 +16,7 @@ def main():
     ui = DMVDriverTestUI(questions,
                          choiceimagequestions,
                          choicequestions)   # Create the UI.
-    
+
     ui.show()   # Show the UI.
 
     app.exec_()    # Run the application.
