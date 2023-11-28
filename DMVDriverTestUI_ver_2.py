@@ -42,6 +42,8 @@ class Ui_DmvTestMainWindow(object):
         choiceimagequestion = self.choiceimagequestions[self.current_question_index]
         choicequestion = self.choicequestions[self.current_question_index]
 
+
+
         print(questiontext)
 
         self.centralWidget = QtWidgets.QWidget(MainWindow)
