@@ -16,7 +16,6 @@ class DMVDriverTestUI(QWidget):
         self.grid_layout = QGridLayout(self)
         self.setup_ui()
 
-    # TODO: The layout does not retain it's rectangular shape, leading to the window stretching beyond the screen.
     def setup_ui(self):
         self.setStyleSheet("background-color: white; color: black;")
         self.setWindowTitle("CSE 2050 DMV Driver's Test")

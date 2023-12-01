@@ -7,7 +7,6 @@ from ChoiceImageQuestion import ChoiceImageQuestion
 from ChoiceQuestion import ChoiceQuestion
 
 
-# TODO: Pycharm is telling me that the <parse()> can be static. Should it be?
 class XMLParser:
 
     """

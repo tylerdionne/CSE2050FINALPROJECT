@@ -1,9 +1,10 @@
 from Question import Question
-from PyQt5.QtWidgets import QRadioButton
+from PyQt5.QtWidgets import QRadioButton, QLabel
 from PyQt5.QtWidgets import QLabel
 
 
 class ChoiceQuestion(Question):
+    answer_label: QLabel | QLabel
     selected_choice = None
 
     def __init__(self, question_text, answer):
@@ -39,4 +40,3 @@ class ChoiceQuestion(Question):
         if state:
             self.selected_choice = choice
             self.answer_label.show()
-
