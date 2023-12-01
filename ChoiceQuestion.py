@@ -18,24 +18,21 @@ class ChoiceQuestion(Question):
     def set_answer_comments(self, comments):
         self.answer_comments = comments
 
-    def display(self, layout):
-        bold_label = QLabel("")
+    def display(self, layout, start_row):
+        bold_label = QLabel(self.question_text)
         bold_label.setStyleSheet("font-weight: bold; font-size: 20px;")
-        layout.addWidget(bold_label)
-        '''
-        for choice_data in self.choices:
-            choice_radio = QRadioButton(choice_data[0])
-            layout.addWidget(choice_radio)
+        layout.addWidget(bold_label, start_row, 0, 1, 3)  # Span across 3 columns for the question text
 
-        layout.addWidget(QLabel(self.answer_comments))
-        '''
+        row = start_row + 1
         for choice_data in self.choices:
             choice_radio = QRadioButton(choice_data[0])
+            choice_radio.setStyleSheet("font-size: 16px;")
             choice_radio.toggled.connect(lambda state, choice=choice_data[0]: self.choice_selected(choice, state) if state else None)
-            layout.addWidget(choice_radio)
+            layout.addWidget(choice_radio, row, 0, 1, -1)  # Span across 3 columns for each choice
+            row += 1
 
         self.answer_label = QLabel(self.answer_comments)
-        layout.addWidget(self.answer_label)
+        layout.addWidget(self.answer_label, row, 0, 1, 3)  # Span across 3 columns for the answer comments
         self.answer_label.hide()
 
     def choice_selected(self, choice, state):

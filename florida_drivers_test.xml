@@ -27,9 +27,7 @@
 	</question>
 
 	<question>
-		<questionText>
-			When you see this sign on a limited-access highway, you should
-		</questionText>
+		<questionText>When you see this sign on a limited-access highway, you should</questionText>
 		<questionImage  path="images/30_mph.jpeg" />
 		<answer>drive at over 30 mph when exiting the highway.</answer>
 		<answer>increase your speed to 30 mph and pass the vehicle in front of you.</answer>

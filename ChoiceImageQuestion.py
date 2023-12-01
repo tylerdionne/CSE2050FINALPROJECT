@@ -20,9 +20,10 @@ class ChoiceImageQuestion:
 
     # Displays the image in the UI by
     # adding it as a widget.
-    def display(self, layout):
+    def display(self, layout, row):
         image_label = QLabel()
         pixmap = QPixmap()
         pixmap.loadFromData(self.image)
+        pixmap = pixmap.scaled(780, 300)  # Scale the image
         image_label.setPixmap(pixmap)
-        layout.addWidget(image_label)
+        layout.addWidget(image_label, row, 0, 1, -1)

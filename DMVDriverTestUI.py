@@ -20,6 +20,7 @@ class DMVDriverTestUI(QWidget):
     def setup_ui(self):
         self.setStyleSheet("background-color: white; color: black;")
         self.setWindowTitle("CSE 2050 DMV Driver's Test")
+        self.setFixedSize(800, 600)
 
         # grid_layout = QGridLayout(self)
         # self.grid_layout = QGridLayout(self)
@@ -29,25 +30,31 @@ class DMVDriverTestUI(QWidget):
         choiceimagequestion = self.choiceimagequestions[self.current_question_index]
         choicequestion = self.choicequestions[self.current_question_index]
 
-        choiceimagequestion.display(self.grid_layout)
+        choiceimagequestion.display(self.grid_layout, 0)
 
         bold_label = QLabel(questiontext)
+        bold_label.setWordWrap(True)
         bold_label.setStyleSheet("font-weight: bold; font-size: 20px;")
-        self.grid_layout.addWidget(bold_label)
+        self.grid_layout.addWidget(bold_label, 1, 0, 1, 3)
 
-        choicequestion.display(self.grid_layout)
+        choicequestion.display(self.grid_layout, 2)
 
         question_label = QLabel("Question {} of 40     | Correct: {} / 40".format(self.current_question_index + 1,
                                                                                   self.correct_answers))
-        self.grid_layout.addWidget(question_label, 8, 0, 1, 1)
+        self.grid_layout.addWidget(question_label, 7, 0, 1, 3)
 
         next_button = QPushButton("Next Question", self)
+        next_button.setMinimumSize(150, 30)
         next_button.clicked.connect(self.next_question)
-        self.grid_layout.addWidget(next_button, 8, 1, 1, 1)
+        self.grid_layout.addWidget(next_button, 7, 2)
 
         quit_button = QPushButton("Quit Quiz", self)
+        quit_button.setMinimumSize(150, 30)
         quit_button.clicked.connect(QApplication.quit)
-        self.grid_layout.addWidget(quit_button, 8, 2, 1, 1)
+        self.grid_layout.addWidget(quit_button, 7, 3)
+
+        self.grid_layout.setRowStretch(8, 0)
+        self.grid_layout.setColumnStretch(3, 0)
 
     def present_question(self):
         self.display(self.grid.layout)
