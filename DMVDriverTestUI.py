@@ -81,5 +81,5 @@ class DMVDriverTestUI(QWidget):
                 widget_to_remove = layout.itemAt(i).widget()
                 layout.removeWidget(widget_to_remove)
 
-                # TODO: Why do we need to set the parent to None?
+
                 widget_to_remove.setParent(None)
